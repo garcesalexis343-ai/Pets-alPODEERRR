@@ -1,0 +1,269 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body{
+    background: linear-gradient(135deg, #163020 0%, #2d6a4f 50%, #95d5b2 100%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+/* =================== MODAL =================== */
+
+.card-modal{
+    display: none;
+    position: fixed;
+    inset: 0;
+
+    background: rgba(0,0,0,.75);
+    backdrop-filter: blur(10px);
+
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+
+    color: white;
+    text-align: center;
+
+    z-index: 1000;
+
+    animation: aparecer .4s ease;
+}
+
+.card-modal h2{
+    font-size: 2rem;
+    margin-bottom: 15px;
+}
+
+.card-modal p{
+    width: 80%;
+    max-width: 500px;
+    line-height: 1.6;
+}
+
+#cerrarModal{
+    margin-top: 25px;
+
+    background: #40916c;
+    color: white;
+
+    border: none;
+    border-radius: 10px;
+
+    padding: 12px 35px;
+
+    font-size: 15px;
+    font-weight: bold;
+
+    cursor: pointer;
+
+    transition: .3s;
+}
+
+#cerrarModal:hover{
+    background: #52b788;
+    transform: translateY(-3px);
+}
+
+/* =================== CONTENEDOR =================== */
+
+.container{
+
+    width: 800px;
+    max-width: 90%;
+
+    min-height: 520px;
+
+    background: #f1f5f9;
+
+    border-radius: 25px;
+
+    overflow: hidden;
+
+    box-shadow: 0 0 15px 10px #0005;
+
+    animation: aparecer .7s ease;
+}
+
+/* =================== FORMULARIO =================== */
+
+.container form{
+
+    display: flex;
+    flex-direction: column;
+
+    justify-content: center;
+    align-items: center;
+
+    padding: 50px;
+
+    height: 100%;
+}
+
+/* =================== TITULOS =================== */
+
+.container h1{
+
+    font-size: 38px;
+
+    color: #163020;
+
+    margin-bottom: 20px;
+}
+
+.container p{
+
+    font-size: 15px;
+
+    color: #555;
+
+    margin-bottom: 15px;
+
+    text-align: center;
+}
+
+.container span{
+
+    font-size: 13px;
+
+    color: #777;
+}
+
+/* =================== INPUTS =================== */
+
+.container input{
+
+    width: 100%;
+
+    padding: 15px;
+
+
+    margin: 10px 0;
+
+    border-radius: 12px;
+
+    border: 2px solid transparent;
+
+    background: #f4f4f4;
+
+    color: #163020;
+
+    outline: none;
+
+    transition: .3s;
+}
+
+.container input:focus{
+
+    border-color: #40916c;
+
+    background: white;
+
+    box-shadow: 0 0 10px rgba(64,145,108,.3);
+}
+
+/* =================== BOTONES =================== */
+
+.container button{
+
+    width: 100%;
+
+    margin-top: 20px;
+
+    padding: 14px;
+
+    border: none;
+
+    border-radius: 12px;
+
+    background: #2d6a4f;
+
+    color: white;
+
+    font-size: 16px;
+
+    font-weight: bold;
+
+    cursor: pointer;
+
+    transition: .3s;
+}
+
+.container button:hover{
+
+    background: #40916c;
+
+    transform: translateY(-3px);
+
+    box-shadow: 0 10px 20px rgba(0,0,0,.2);
+}
+
+.container button:active{
+
+    transform: scale(.97);
+}
+
+/* =================== BOTON TRANSPARENTE =================== */
+
+.container button.hidden{
+
+    background: transparent;
+
+    color: #2d6a4f;
+
+    border: 2px solid #2d6a4f;
+}
+
+.container button.hidden:hover{
+
+    background: #2d6a4f;
+
+    color: white;
+}
+
+/* =================== ANIMACIONES =================== */
+
+@keyframes aparecer{
+
+    from{
+
+        opacity: 0;
+        transform: translateY(400px);
+
+    }
+
+    to{
+
+        opacity: 1;
+        transform: translateY(0);
+
+    }
+
+}
+
+/* Loading overlay */
+.site-loader{
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,0.5);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 99999;
+}
+.site-loader .spinner{
+    width: 46px;
+    height: 46px;
+    border-radius: 50%;
+    border: 5px solid rgba(255,255,255,0.2);
+    border-top-color: #fff;
+    animation: spin 1s linear infinite;
+}
+@keyframes spin{
+    to{transform:rotate(360deg)}
+}

@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="login.css">
+    <title>Login</title>
+</head>
+<body>
+
+<!--tarjeta personalizada de inicio-->
+    <!-- Loading overlay -->
+    <div id="site-loader" class="site-loader" style="display:flex">
+        <div class="spinner"></div>
+    </div>
+<div class="card-modal">
+    <h2 class="h2"></h2>
+    <p>que gran gusto tenerlo aqui con peats al poder <br> esperamos seguir encontrandolo aqui </p>
+    <button id="cerrarModal" onclick="cerrarModal()">Cerar modal</button>
+</div>
+    
+<div class="container">
+    <form>
+        <h1>Iniciar Sesión🐾</h1>
+        <p>Utiliza su correo para Iniciar Sesión<p></p>
+        <input id="correo" type="email" placeholder="Correo">
+        <br><br>
+        <p>Utiliza su contraseña para Iniciar Sesión<p></p>
+        <input id="password" type="password" placeholder="Contraseña">
+        <br><br>
+
+        <button id="loginBtn" type="button">Entrar</button>
+        <br>
+        <a href="auth/registro.html">registrarte</a>
+
+
+    </form>
+</div>
+
+<script type="module" src="/auth/login.js"></script>
+
+<script>
+    (function(){
+        const loader = document.getElementById('site-loader');
+        if(!loader) return;
+        function hide(){ loader.style.display = 'none'; }
+        function show(){ loader.style.display = 'flex'; }
+        window.addEventListener('DOMContentLoaded', hide);
+        window.addEventListener('load', hide);
+        window.addEventListener('beforeunload', show);
+        document.querySelectorAll('a').forEach(a => {
+            a.addEventListener('click', e => {
+                const href = a.getAttribute('href');
+                if(!href || href.startsWith('#') || href.startsWith('mailto:') || href.startsWith('javascript:')) return;
+                if(a.target && a.target !== '' && a.target !== '_self') return;
+                e.preventDefault();
+                show();
+                setTimeout(()=> window.location.href = href, 120);
+            });
+        });
+        document.querySelectorAll('form').forEach(f=> f.addEventListener('submit', ()=> show()));
+    })();
+</script>
+
+</body>
+</html>

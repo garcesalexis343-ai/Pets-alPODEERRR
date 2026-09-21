@@ -1,0 +1,48 @@
+@media screen and (max-width:620px){
+
+    #logo{
+        display:none;
+    }
+
+    #btn{
+        display:block;
+        position: relative;
+    }
+
+    nav .nav-a{
+        display:none;
+    }
+
+    nav.abierto{
+        display:flex;
+        flex-direction:column;
+        align-items:center;
+    }
+
+    nav.abierto .nav-a{
+        display:block;
+        width:100%;
+        text-align:center;
+        padding:10px 0;
+    }
+
+    .principal{
+        position:relative;
+    }
+    .grid-veterinarios{
+        width: 100vw;
+
+    }
+    .img_veterinarios{
+        width: 150px;
+        height: 150px;
+    }
+    .card{
+        width: 80%;
+    }
+    #contactBtn{
+        left: 30px;
+        height: 40px;
+
+    }
+}

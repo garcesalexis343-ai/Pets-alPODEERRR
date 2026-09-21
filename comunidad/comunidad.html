@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<link rel="stylesheet" href="comunidad.css">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Comunidad Pets al Poder</title>
+
+</head>
+<body>
+
+<!-- Loading overlay -->
+<div id="site-loader" class="site-loader" style="display:flex">
+    <div class="spinner"></div>
+</div>
+
+<header>
+    <h1>🐾 Comunidad Pets al Poder</h1>
+    <a href="../inicio.html">Regresar</a>
+</header>
+<div class="container-comunidad">
+    <main class="feed" id="contenedor-publicaciones">
+
+        <div id="sin-publicaciones">
+            <h2>No hay publicaciones</h2>
+            <span>🐾</span>
+        </div>
+
+    </main>
+
+    <aside class="sidebar">
+        <h3>Reglas rápidas</h3>
+        <p>Comparte información útil. Respeta a los demás usuarios.</p>
+        <hr>
+        <h4>Atajos</h4>
+        <p>Pulsa <strong>+</strong> para crear una publicación.</p>
+    </aside>
+
+</div>
+
+<button class="flotante" id="abrirModal">+</button>
+
+<div class="modal" id="modal">
+
+    <div class="modal-contenido">
+
+        <button id="cerrarModal">✖</button>
+        <h2>Nueva publicación</h2>
+
+        <input
+            type="text"
+            id="titulo"
+            placeholder="Título de la publicación">
+
+        <input
+            type="file"
+            id="foto"
+            accept="image/*">
+
+        <textarea
+            id="descripcion"
+            placeholder="Describe lo sucedido"></textarea>
+
+        <button
+            class="publicar"
+            id="publicar">
+            Publicar
+        </button>
+
+    </div>
+
+</div>
+<script type="module" src="comunidad.js"></script>
+<script>
+    (function(){
+        const loader = document.getElementById('site-loader');
+        if(!loader) return;
+        function hide(){ loader.style.display = 'none'; }
+        function show(){ loader.style.display = 'flex'; }
+        window.addEventListener('DOMContentLoaded', hide);
+        window.addEventListener('load', hide);
+        window.addEventListener('beforeunload', show);
+        document.querySelectorAll('a').forEach(a => {
+            a.addEventListener('click', e => {
+                const href = a.getAttribute('href');
+                if(!href || href.startsWith('#') || href.startsWith('mailto:') || href.startsWith('javascript:')) return;
+                if(a.target && a.target !== '' && a.target !== '_self') return;
+                e.preventDefault();
+                show();
+                setTimeout(()=> window.location.href = href, 120);
+            });
+        });
+        document.querySelectorAll('form').forEach(f=> f.addEventListener('submit', ()=> show()));
+    })();
+</script>
+</body>
+</html>

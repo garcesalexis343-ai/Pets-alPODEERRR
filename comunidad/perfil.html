@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<link rel="stylesheet" href="comunidad.css">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Mi Perfil - Comunidad</title>
+</head>
+<body>
+<div id="site-loader" class="site-loader" style="display:flex">
+    <div class="spinner"></div>
+</div>
+
+<header>
+    <h1>Mi Perfil</h1>
+    <a href="../inicio.html">Regresar</a>
+</header>
+
+<main class="container-comunidad">
+    <section class="feed" id="mis-publicaciones">
+        <div id="sin-publicaciones">
+            <h2>No tienes publicaciones aún</h2>
+        </div>
+    </section>
+
+    <aside class="sidebar">
+        <h3>Tu información</h3>
+        <div id="perfil-info"></div>
+        <p id="perfil-description" style="margin-top:12px;color:#374151;line-height:1.5;"></p>
+    </aside>
+</main>
+
+<button class="flotante" id="abrirModal" style="display:block !important; position:fixed; right:25px; bottom:25px; z-index:1000;">+</button>
+
+<div class="modal" id="modal">
+    <div class="modal-contenido">
+        <button id="cerrarModal">✖</button>
+        <h2>Nueva publicación</h2>
+
+        <input
+            type="text"
+            id="titulo"
+            placeholder="Título de la publicación">
+
+        <input
+            type="file"
+            id="foto"
+            accept="image/*">
+
+        <textarea
+            id="descripcion"
+            placeholder="Describe lo sucedido"></textarea>
+
+        <button
+            class="publicar"
+            id="publicar">
+            Publicar
+        </button>
+
+    </div>
+</div>
+
+<script type="module" src="perfil.js"></script>
+</body>
+</html>

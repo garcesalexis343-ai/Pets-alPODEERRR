@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="registro.css">
+    <title>Registro</title>
+</head>
+<body>
+
+    <!-- Loading overlay -->
+    <div id="site-loader" class="site-loader" style="display:flex">
+        <div class="spinner"></div>
+    </div>
+
+    <div class="container">
+        <form>
+            <h1>Crear cuenta</h1>
+            <p>Utiliza su nombre para registrarse<p>
+            <input type="text" id="nombre" placeholder="Nombre de usuario">
+            <br><br>
+            <p>Foto de perfil (opcional)</p>
+            <input type="file" id="fotoPerfil" accept="image/*">
+            <br><br>
+            <p>Utiliza su correo para registrarse<p></p>
+            <input type="email" id="correo" placeholder="Correo">
+            <br><br>
+            <p>Cree su contraseña para registrarse<p></p>
+            <input type="password" id="password" placeholder="Contraseña">
+            <br><br>
+            <p>Descripción breve</p>
+            <textarea id="descripcionPerfil" placeholder="Escribe una breve biografía" rows="4" style="width:100%;border-radius:10px;border:1px solid #ccc;padding:10px;background:rgba(255,255,255,0.9);"></textarea>
+            <br><br>
+            <button id="registrar" type="button">Registrarme</button>
+            <br>
+            <a href="/index.html">Iniciar sesion</a>
+        </form>
+        
+    </div>
+    
+
+    <script type="module" src="registro.js"></script>
+
+    <script>
+    (function(){
+        const loader = document.getElementById('site-loader');
+        if(!loader) return;
+        function hide(){ loader.style.display = 'none'; }
+        function show(){ loader.style.display = 'flex'; }
+        window.addEventListener('DOMContentLoaded', hide);
+        window.addEventListener('load', hide);
+        window.addEventListener('beforeunload', show);
+        document.querySelectorAll('a').forEach(a => {
+            a.addEventListener('click', e => {
+                const href = a.getAttribute('href');
+                if(!href || href.startsWith('#') || href.startsWith('mailto:') || href.startsWith('javascript:')) return;
+                if(a.target && a.target !== '' && a.target !== '_self') return;
+                e.preventDefault();
+                show();
+                setTimeout(()=> window.location.href = href, 120);
+            });
+        });
+        document.querySelectorAll('form').forEach(f=> f.addEventListener('submit', ()=> show()));
+    })();
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,444 @@
+/*Paleta de colores*/
+:root {
+  --color-principal: #204020;
+  --color-secundario: #608040;
+  --color-acento: #806040;
+  --color-fondo: #fff;
+  --color-texto: #202020;
+}
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body {
+    overflow-x: hidden;
+    font-family: 'Segoe UI', Tahoma;
+    margin: 0;
+    padding: 0;
+    background:var(--color-fondo);
+    background-color: #3335;
+    animation: aparecer 1s ease-out;
+}
+@keyframes aparecer {
+    from{
+        opacity: 0;
+        transform: translateY(-50);
+    }
+    to{
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/*SECCION PRINCIPAL */
+
+header {
+    background:linear-gradient(
+        45deg,
+        var(--color-texto),
+        var(--color-acento),
+        var(--color-texto)
+    );
+
+    color: white;
+    text-align: center;
+}
+
+h1{
+    margin: 0;
+}
+
+.contact{
+    background-color: var(--color-principal);
+}
+
+#anuel{
+    width: 100vw;
+    height:100%;
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+}
+
+
+.title{
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    gap: 12px;
+    flex-wrap: wrap;
+
+}
+
+#userWelcome{
+    font-size: 1.05rem;
+    color: antiquewhite;
+    margin: 0;
+    display: inline-block;
+}
+#userWelcome{
+    font-size: 1.2rem;
+    color:antiquewhite;
+    
+}
+h1{
+    margin: 0;
+}
+.principal{
+    width: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 10;
+}
+.h2sn{
+    text-align: center;
+    margin-top:-20px;
+    margin-bottom: 13px;
+}
+#Sobrenosotros{
+    text-align: justify;
+}
+.p_header{
+    padding-bottom: 9px;
+    margin: 0;
+}
+
+nav{
+    display: flex;
+    justify-content: center;
+    font-weight: 900;
+}
+
+nav a{
+    color: white;
+    padding: 1rem;
+    text-decoration: none;
+}
+#btn{
+    display: none;
+}
+
+a{
+    gap: 2px;
+    background-color: #20202099;
+    border-radius: 15px;
+
+}
+
+/*formulario*/
+
+.formulario-contacto{
+    max-width: 350px;
+    margin: 20px auto;
+    padding: 15px;
+    background: white;
+    border-radius: 15px;
+
+    box-shadow: 0px 0px 15px #0f0f0f;
+}
+
+.formulario-contacto label{
+    display: block;
+    text-align: left;
+    font-weight: 600;
+    margin-bottom: 4px;
+}
+
+.formulario-contacto input,
+.formulario-contacto textarea{
+    width: 100%;
+    padding: 8px 10px;
+
+    border: 1px solid #ccc;
+    border-radius: 8px;
+
+    font-size: 14px;
+    outline: none;
+}
+
+.formulario-contacto input:focus,
+.formulario-contacto textarea:focus{
+    border-color: var(--color-secundario);
+}
+
+.formulario-contacto{
+    resize: vertical;
+    min-height: 90px;
+}
+
+.formulario-contacto button{
+    width: 100%;
+    padding: 10px;
+
+    border: none;
+    border-radius: 10px;
+
+    background: var(--color-secundario);
+    color: white;
+
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.formulario-contacto button:hover{
+    background: var(--color-principal);
+}
+
+textarea{
+    resize: none;
+    width: 180px;
+    height: 90px;
+}
+    /*footer*/
+
+.footer-info{
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+    gap: calc(5px 3vw 14px);
+}
+
+.creditos{
+    text-align: start;
+}
+
+.footer-contenido{
+    
+    text-align: center;
+    background: linear-gradient(
+        135deg,
+        var(--color-acento),
+        var(--color-secundario),
+        var(--color-acento)
+    );
+    color: #333;
+}
+.linkfooter{
+    text-decoration: none;
+    background-color: transparent;
+    font-weight: 700;
+    color: var(--color-texto);
+    font-size: 16px;
+}
+
+.footer-enlaces{
+
+    gap: clamp(12px, 2vw, 32px); 
+}
+
+nav a:hover{
+    border-radius: 13px 9px;
+    background: var(--color-texto);
+    transition: 0.9s;
+    transform: scale(1.05);
+    transition: 5s;
+    transform: rotate(360deg);
+    
+}
+
+#logo{
+    width: 50px;
+    height: 50px;
+    animation: palpitar 2.4s infinite;
+}
+
+/* CONTENIDO */
+
+.img_veterinarios{
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.grid-veterinarios{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+    padding: 20px;
+}
+
+h2{
+    margin: 0;
+}
+
+.card{
+    position: relative;
+    background: whitesmoke;
+    padding: 20px;
+    border-radius: 15px;
+    box-shadow: 10px 10px 20px #202020;
+}
+
+.card.abierta{
+    z-index: 1000;
+}
+
+section{
+    padding: 2rem;
+    text-align: center;
+}
+
+#contacto-boton{
+    position: fixed;
+    bottom: 40px;
+    right: 30px;
+    animation: palpitar 1.0s infinite;
+    z-index: 999900;
+
+    padding: 3px;
+}
+@keyframes palpitar{
+    0%{
+        transform: scale(1);
+    }
+
+    50%{
+        transform: scale(1.15);
+    }
+
+    100%{
+        transform: scale(1);
+    }
+}
+
+/* Loading overlay */
+.site-loader{
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,0.5);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 99999;
+}
+.site-loader .spinner{
+    width: 56px;
+    height: 56px;
+    border-radius: 50%;
+    border: 6px solid rgba(255,255,255,0.2);
+    border-top-color: #fff;
+    animation: spin 1s linear infinite;
+}
+@keyframes spin{
+    to{transform:rotate(360deg)}
+}
+
+
+
+.btn{
+    padding: 10px 20px;
+    background-color:#3335;
+    color: white;
+    text-decoration: none;
+    border-radius: 50px 90px 90px 0;
+}
+
+.btn:hover{
+    background-color:#333;
+    transform: scale(1.05);
+}
+
+
+/* ========================= */
+/* VER MÁS / VER MENOS */
+/* ========================= */
+
+.vermas{
+    margin-top:10px;
+    margin-bottom: 10px;
+    padding:10px 15px;
+    border:none;
+    border-radius:10px;
+    cursor:pointer;
+    
+    background:var(--color-secundario);
+    color:white;
+
+    font-weight:bold;
+}
+
+.vermas:hover{
+    transform:scale(1.05);
+}
+
+.extra{
+    display:none;
+    position: absolute;
+    
+    left:0;
+
+    width:100%;
+    background:white;
+    padding:10px 15px;
+    border-radius:0 0 15px 15px;
+    box-shadow:0 10px 20px rgba(0,0,0,.25);
+    z-index:1000;
+    
+
+}
+
+.extra.activo{
+    display:block;
+    text-align: start;
+    background-color: #f5f5f5;
+    
+}
+
+.ubicacion-veterinarios{
+    display: inline-block;
+    text-decoration: none;
+    color: var(--color-fondo);
+    background-color: #202020;
+    padding: 6px 12px;
+    margin:15px 5px 5px 5px;
+    border-radius: 6px;
+    box-shadow: 0 0 0 2px #2b0303;
+
+}
+
+
+/*Carrsel*/
+.contenedor-carrusel{
+    position: relative;
+}
+
+#anterior,
+#siguiente{
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 100;
+    
+    border: none;
+    cursor: pointer;
+
+    padding: 12px 16px;
+
+    background: rgba(0,0,0,.5);
+    color: white;
+
+    font-size: 24px;
+    border-radius: 50%;
+}
+.contenedor-carrusel{
+    position: relative;
+    width: 100%;
+}
+
+
+#anterior{
+    left: 20px;
+}
+
+#siguiente{
+    right: 20px;
+}
